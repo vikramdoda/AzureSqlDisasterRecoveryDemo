@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSqlDisasterRecoveryDemo", "AzureSqlDisasterRecoveryDemo\AzureSqlDisasterRecoveryDemo.csproj", "{F71FE7FC-4781-4B84-B7F5-DAEF3A0CE46F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSqlDisasterRecovery.DataService", "AzureSqlDisasterRecovery.DataService\AzureSqlDisasterRecovery.DataService.csproj", "{F4401751-B332-45B3-8114-2A7FFA1F023E}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ASDRRecoveryGroup", "ASDRRecoveryGroup\ASDRRecoveryGroup.deployproj", "{F1E7A964-56DD-4C00-8B9C-E95D3718C0F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F71FE7FC-4781-4B84-B7F5-DAEF3A0CE46F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71FE7FC-4781-4B84-B7F5-DAEF3A0CE46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71FE7FC-4781-4B84-B7F5-DAEF3A0CE46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71FE7FC-4781-4B84-B7F5-DAEF3A0CE46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4401751-B332-45B3-8114-2A7FFA1F023E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4401751-B332-45B3-8114-2A7FFA1F023E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4401751-B332-45B3-8114-2A7FFA1F023E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4401751-B332-45B3-8114-2A7FFA1F023E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E7A964-56DD-4C00-8B9C-E95D3718C0F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E7A964-56DD-4C00-8B9C-E95D3718C0F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E7A964-56DD-4C00-8B9C-E95D3718C0F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E7A964-56DD-4C00-8B9C-E95D3718C0F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

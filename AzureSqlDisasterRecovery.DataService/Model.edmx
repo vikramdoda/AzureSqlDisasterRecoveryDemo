@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AdventureworksDW2016CTP3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DimAccount">
+          <Key>
+            <PropertyRef Name="AccountKey" />
+          </Key>
+          <Property Name="AccountKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentAccountKey" Type="int" />
+          <Property Name="AccountCodeAlternateKey" Type="int" />
+          <Property Name="ParentAccountCodeAlternateKey" Type="int" />
+          <Property Name="AccountDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomMembers" Type="nvarchar" MaxLength="300" />
+          <Property Name="ValueType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomMemberOptions" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_DimAccount_DimAccount">
+          <End Role="DimAccount" Type="Self.DimAccount" Multiplicity="0..1" />
+          <End Role="DimAccount1" Type="Self.DimAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DimAccount">
+              <PropertyRef Name="AccountKey" />
+            </Principal>
+            <Dependent Role="DimAccount1">
+              <PropertyRef Name="ParentAccountKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AdventureworksDW2016CTP3ModelStoreContainer">
+          <EntitySet Name="DimAccount" EntityType="Self.DimAccount" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DimAccount_DimAccount" Association="Self.FK_DimAccount_DimAccount">
+            <End Role="DimAccount" EntitySet="DimAccount" />
+            <End Role="DimAccount1" EntitySet="DimAccount" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdventureworksDW2016CTP3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DimAccount">
+          <Key>
+            <PropertyRef Name="AccountKey" />
+          </Key>
+          <Property Name="AccountKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentAccountKey" Type="Int32" />
+          <Property Name="AccountCodeAlternateKey" Type="Int32" />
+          <Property Name="ParentAccountCodeAlternateKey" Type="Int32" />
+          <Property Name="AccountDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomMembers" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ValueType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomMemberOptions" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_DimAccount_DimAccount">
+          <End Role="DimAccount" Type="Self.DimAccount" Multiplicity="0..1" />
+          <End Role="DimAccount1" Type="Self.DimAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DimAccount">
+              <PropertyRef Name="AccountKey" />
+            </Principal>
+            <Dependent Role="DimAccount1">
+              <PropertyRef Name="ParentAccountKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AdventureworksDW2016CTP3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DimAccounts" EntityType="Self.DimAccount" />
+          <AssociationSet Name="FK_DimAccount_DimAccount" Association="Self.FK_DimAccount_DimAccount">
+            <End Role="DimAccount" EntitySet="DimAccounts" />
+            <End Role="DimAccount1" EntitySet="DimAccounts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdventureworksDW2016CTP3ModelStoreContainer" CdmEntityContainer="AdventureworksDW2016CTP3Entities">
+          <EntitySetMapping Name="DimAccounts">
+            <EntityTypeMapping TypeName="AdventureworksDW2016CTP3Model.DimAccount">
+              <MappingFragment StoreEntitySet="DimAccount">
+                <ScalarProperty Name="AccountKey" ColumnName="AccountKey" />
+                <ScalarProperty Name="ParentAccountKey" ColumnName="ParentAccountKey" />
+                <ScalarProperty Name="AccountCodeAlternateKey" ColumnName="AccountCodeAlternateKey" />
+                <ScalarProperty Name="ParentAccountCodeAlternateKey" ColumnName="ParentAccountCodeAlternateKey" />
+                <ScalarProperty Name="AccountDescription" ColumnName="AccountDescription" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="CustomMembers" ColumnName="CustomMembers" />
+                <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+                <ScalarProperty Name="CustomMemberOptions" ColumnName="CustomMemberOptions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
